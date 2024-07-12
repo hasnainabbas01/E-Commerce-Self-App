@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         updateUI(ProductListViewState.Content((1..3).map {
             ProductCardViewState("Playstation $it","This is a nice console! Check it out","200 US$")
         }))
-//        updateUI(ProductListViewState.Error("Currently showing error"))
+//        updateUI(ProductListViewState.Error("Currently showing error")) // comment to check git push
     }
 
     private fun updateUI(viewState: ProductListViewState) {
