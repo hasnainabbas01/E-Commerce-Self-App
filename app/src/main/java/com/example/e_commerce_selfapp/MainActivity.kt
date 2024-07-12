@@ -16,10 +16,10 @@ class MainActivity : AppCompatActivity() {
         binding.viewProductList.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.viewProductList.adapter = adapter
-        updateUI(ProductListViewState.Content((1..3).map {
-            ProductCardViewState("Playstation $it","This is a nice console! Check it out","200 US$")
-        }))
-//        updateUI(ProductListViewState.Error("Currently showing error"))
+//        updateUI(ProductListViewState.Content((1..3).map {
+//            ProductCardViewState("Playstation $it","This is a nice console! Check it out","200 US$")
+//        }))
+        updateUI(ProductListViewState.Error("Currently showing error"))
     }
 
     private fun updateUI(viewState: ProductListViewState) {
