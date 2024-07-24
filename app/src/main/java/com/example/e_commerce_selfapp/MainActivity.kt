@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateUI(viewState: ProductListViewState) {
         when (viewState) {
             is ProductListViewState.Content -> {
+                binding.viewProductList.isVisible = true
                 binding.loadingView.isVisible = false
                 binding.errorView.isVisible = false
                 adapter.setData(viewState.productList)
