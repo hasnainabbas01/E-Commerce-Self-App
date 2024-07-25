@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.e_commerce_selfapp.databinding.ProductCardBinding
 
-class ProductCardListAdapter : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
+class ProductCardListAdapter(val onClicked : (ProductCardViewState) -> Unit) : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
     private var data: List<ProductCardViewState> = emptyList()
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -18,7 +18,7 @@ class ProductCardListAdapter : RecyclerView.Adapter<ProductCardListAdapter.ViewH
         )
     }
 
-    override fun onBindViewHolder(holder: ProductCardListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(data[position])
     }
 
@@ -30,9 +30,13 @@ class ProductCardListAdapter : RecyclerView.Adapter<ProductCardListAdapter.ViewH
         this.data = productList
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bind(productCardViewState: ProductCardViewState){
+
             val bind = ProductCardBinding.bind(itemView)
+            itemView.setOnClickListener{
+                onClicked(productCardViewState)
+            }
             bind.viewProductName.text = productCardViewState.title
             bind.productPrice.text = productCardViewState.price
             bind.viewProductDescription.text = productCardViewState.description
