@@ -10,20 +10,12 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_commerce_selfapp.databinding.FragmentProductListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProductListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class ProductListFragment : Fragment() {
    private lateinit var binding : FragmentProductListBinding;
-    private val viewModel: ProductListViewModel by viewModels()
+    private val viewModel= viewModels<ProductListViewModel>()
     private var adapter = ProductCardListAdapter(::onItemClicked)
 
     override fun onCreateView(
@@ -40,10 +32,10 @@ class ProductListFragment : Fragment() {
         binding.viewProductList.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.viewProductList.adapter = adapter
-        viewModel.viewState.observe(viewLifecycleOwner) { viewState ->
+        viewModel.value.viewState.observe(viewLifecycleOwner) { viewState ->
             updateUI(viewState)
         }
-        viewModel.loadProductList()
+        viewModel.value.loadProductList()
     }
     private fun updateUI(viewState: ProductListViewState) {
         when (viewState) {
