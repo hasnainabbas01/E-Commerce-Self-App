@@ -1,5 +1,6 @@
 package com.example.e_commerce_selfapp
 
+import com.example.e_commerce_selfapp.product_list.presentation.ProductCardViewState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
