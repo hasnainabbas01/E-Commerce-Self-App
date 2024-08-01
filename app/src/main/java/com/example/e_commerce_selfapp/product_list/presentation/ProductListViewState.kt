@@ -1,4 +1,4 @@
-package com.example.e_commerce_selfapp
+package com.example.e_commerce_selfapp.product_list.presentation
 
 sealed class ProductListViewState {
     object Loading : ProductListViewState()

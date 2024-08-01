@@ -1,4 +1,4 @@
-package com.example.e_commerce_selfapp
+package com.example.e_commerce_selfapp.product_details.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

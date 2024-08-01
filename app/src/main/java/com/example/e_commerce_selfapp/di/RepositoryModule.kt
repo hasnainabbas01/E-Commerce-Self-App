@@ -1,9 +1,9 @@
 package com.example.e_commerce_selfapp.di
 
-import com.example.e_commerce_selfapp.ApiClient
-import com.example.e_commerce_selfapp.ProductRepository
-import com.example.e_commerce_selfapp.ProductRepositoryAPI
-import com.example.e_commerce_selfapp.ProductService
+import com.example.e_commerce_selfapp.shared.data.repository.api.ApiClient
+import com.example.e_commerce_selfapp.shared.data.repository.ProductRepository
+import com.example.e_commerce_selfapp.shared.data.repository.api.ProductRepositoryAPI
+import com.example.e_commerce_selfapp.shared.data.repository.api.ProductService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,5 +20,5 @@ class RepositoryModule {
     fun providesProductRepositoryAPI(service: ProductService) : ProductRepositoryAPI = ProductRepositoryAPI(service)
 
     @Provides
-    fun providesProductService() : ProductService  = ApiClient.getService()
+    fun providesProductService() : ProductService = ApiClient.getService()
 }

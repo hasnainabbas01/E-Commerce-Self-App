@@ -1,4 +1,4 @@
-package com.example.e_commerce_selfapp
+package com.example.e_commerce_selfapp.shared.data.repository.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

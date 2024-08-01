@@ -1,4 +1,4 @@
-package com.example.e_commerce_selfapp
+package com.example.e_commerce_selfapp.shared.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.viewModels

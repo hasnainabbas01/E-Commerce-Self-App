@@ -1,10 +1,10 @@
-package com.example.e_commerce_selfapp
+package com.example.e_commerce_selfapp.product_list.presentation
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.e_commerce_selfapp.R
 import com.example.e_commerce_selfapp.databinding.ProductCardBinding
 
 class ProductCardListAdapter(val onClicked : (ProductCardViewState) -> Unit) : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {

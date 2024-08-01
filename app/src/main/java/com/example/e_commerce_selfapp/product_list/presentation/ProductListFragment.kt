@@ -1,4 +1,4 @@
-package com.example.e_commerce_selfapp
+package com.example.e_commerce_selfapp.product_list.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_commerce_selfapp.ProductListFragmentDirections
 import com.example.e_commerce_selfapp.databinding.FragmentProductListBinding
 import dagger.hilt.android.AndroidEntryPoint
 

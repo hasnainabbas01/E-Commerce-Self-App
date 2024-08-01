@@ -1,12 +1,14 @@
-package com.example.e_commerce_selfapp
+package com.example.e_commerce_selfapp.shared.data.repository.api
 
+import com.example.e_commerce_selfapp.shared.data.repository.ProductRepository
 import com.example.e_commerce_selfapp.product_list.presentation.ProductCardViewState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class ProductRepositoryAPI @Inject constructor(private val service: ProductService) : ProductRepository {
+class ProductRepositoryAPI @Inject constructor(private val service: ProductService) :
+    ProductRepository {
     override suspend fun getProductList() : List<ProductCardViewState>{
            return withContext(Dispatchers.IO){
                delay(2000)
